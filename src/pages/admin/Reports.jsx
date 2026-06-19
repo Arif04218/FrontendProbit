@@ -39,11 +39,12 @@ export default function Reports() {
   const getLogUser = (log) => log.User || log.user || log.users || log.Users || {};
 
   const userActivities = useMemo(
-    () => logs.filter((log) => log.User?.role === "user"), 
+    () => logs.filter((log) => log.user?.role === "user"),
     [logs]
   );
+
   const adminActivities = useMemo(
-    () => logs.filter((log) => log.User?.role === "admin"), 
+    () => logs.filter((log) => log.user?.role === "admin"),
     [logs]
   );
   const latest = logs.slice(0, 12);
@@ -99,10 +100,10 @@ export default function Reports() {
                     <tr key={log.id} className="hover:bg-slate-50 transition">
                       <td className="py-4 font-bold text-slate-700">{formatAction(log.action_description)}</td>
                       <td className="py-4 text-sm text-slate-600">
-                        <div className="font-bold text-slate-800">{log.User?.username || "User"}</div>
-                        <div className="text-xs text-slate-400">{log.User?.email || "-"}</div>
+                        <div className="font-bold text-slate-800">{log.user?.username || "User"}</div>
+                        <div className="text-xs text-slate-400">{log.user?.email || "-"}</div>
                       </td>
-                      <td className="py-4 text-sm"><span className="px-3 py-1 bg-emerald-50 text-[#10BB89] rounded-full text-[10px] font-bold uppercase">{log.User?.role || "-"}</span></td>
+                      <td className="py-4 text-sm"><span className="px-3 py-1 bg-emerald-50 text-[#10BB89] rounded-full text-[10px] font-bold uppercase">{log.user?.role || "-"}</span></td>
                       <td className="py-4 text-sm text-slate-500">{formatDateTimeIndonesia(log.createdAt || log.created_at)} WIB</td>
                     </tr>
                   ))}
