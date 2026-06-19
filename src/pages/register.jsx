@@ -69,11 +69,11 @@ const handleRegister = async () => {
 >
       {/* WRAPPER UTAMA */}
       <div
-        className="flex overflow-hidden w-full"
+        className="flex w-full"
         style={{
-          Width: "100px",
-          Height: "100vh",
-          borderRadius: "0px",
+          width: "100%",
+          height: "100vh",
+          overflow: "hidden",
           background: "#f5f5f5",
         }}
       >
@@ -81,26 +81,31 @@ const handleRegister = async () => {
         <div
           className="flex flex-col"
           style={{
-            width: "46%",
-            padding: "50px 119px",
+            width: "44%",
+            minWidth: "600px",
+            paddingTop: "28px",
+            paddingLeft: "40px",
+            paddingRight: "40px",
+            paddingBottom: "18px",
             background: "#f8fafc",
-            borderRight: "1px solid rgba(148, 163, 184, 0.1)",
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
           }}
         >
           {/* Logo PROBIT */}
           <div
             className="flex items-center"
             style={{
-              gap: "10px",
-              marginLeft: "-50px",
+              gap: "6px",
             }}
           >
             <img
               src="/logo.png"
               alt="Probit Logo"
               style={{
-                width: "55px",
-                height: "55px",
+                width: "36px",
+                height: "36px",
                 objectFit: "contain",
                 borderRadius: "6px",
               }}
@@ -108,7 +113,7 @@ const handleRegister = async () => {
             <span
               style={{
                 fontWeight: 800,
-                fontSize: "50px",
+                fontSize: "32px",
                 color: "#0f172a",
                 letterSpacing: "-0.8px",
               }}
@@ -121,16 +126,18 @@ const handleRegister = async () => {
           <div
             className="w-full"
             style={{
-              maxWidth: "520px",
-              marginTop: "60px",
-              marginLeft: "80px",
+              width: "100%",
+              maxWidth: "430px",
+              marginTop: "28px",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
             {/* Header */}
             <h2
               style={{
                 fontWeight: 700,
-                fontSize: "32px",
+                fontSize: "25px",
                 color: "#0f172a",
                 lineHeight: 1.2,
                 marginBottom: "4px",
@@ -142,10 +149,10 @@ const handleRegister = async () => {
             </h2>
             <p
               style={{
-                fontSize: "16px",
+                fontSize: "11px",
                 color: "#475569",
                 fontWeight: 500,
-                marginBottom: "14px",
+                marginBottom: "10px",
                 lineHeight: 1.4,
               }}
             >
@@ -153,25 +160,25 @@ const handleRegister = async () => {
             </p>
 
             {/* Social Buttons */}
-            <div className="flex" style={{ gap: "10px", marginBottom: "12px" }}>
+            <div className="flex" style={{ gap: "6px", marginBottom: "8px" }}>
               <button
                 onClick={() => googleRegister()}
                 className="flex-1 flex items-center justify-center"
                 style={{
                   background: "rgba(255,255,255,0.75)",
                   border: "1px solid rgba(148,163,184,0.4)",
-                  borderRadius: "14px",
-                  padding: "14px",
-                  fontSize: "16px",
+                  borderRadius: "10px",
+                  padding: "6px 10px",
+                  fontSize: "12px",
                   fontWeight: 600,
                   color: "#374151",
-                  gap: "8px",
+                  gap: "4px",
                   cursor: "pointer",
                 }}
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="13"
+                  height="13"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -199,18 +206,18 @@ const handleRegister = async () => {
             style={{
               background: "rgba(255,255,255,0.75)",
               border: "1px solid rgba(148,163,184,0.4)",
-              borderRadius: "14px",
-              padding: "14px",
-              fontSize: "16px",
+              borderRadius: "10px",
+              padding: "6px 10px",
+              fontSize: "12px",
               fontWeight: 600,
               color: "#374151",
-              gap: "8px",
+              gap: "4px",
               cursor: "pointer",
             }}
           >
                 <svg
-                  width="20"
-                  height="20"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -224,7 +231,7 @@ const handleRegister = async () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                marginBottom: "12px",
+                marginBottom: "8px",
               }}
             >
     
@@ -233,7 +240,7 @@ const handleRegister = async () => {
             {/* Divider */}
             <div
               className="flex items-center"
-              style={{ gap: "10px", marginBottom: "12px" }}
+              style={{ gap: "6px", marginBottom: "8px" }}
             >
               <div
                 style={{
@@ -244,7 +251,7 @@ const handleRegister = async () => {
               />
               <span
                 style={{
-                  fontSize: "14px",
+                  fontSize: "11px",
                   color: "#64748b",
                   whiteSpace: "nowrap",
                   padding: "0 2px",
@@ -263,14 +270,14 @@ const handleRegister = async () => {
             </div>
 
             {/* Username */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ marginBottom: "4px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   color: "#334155",
-                  marginBottom: "4px",
+                  marginBottom: "2px",
                   paddingLeft: "2px",
                 }}
               >
@@ -281,9 +288,9 @@ const handleRegister = async () => {
                 <User
                   className="absolute"
                   style={{
-                    left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    left: "10px",
+                    width: "12px",
+                    height: "12px",
                     color: "#64748b",
                   }}
                 />
@@ -296,14 +303,14 @@ const handleRegister = async () => {
                   placeholder="Enter your username"
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "16px",
-                    paddingTop: "14px",
-                    paddingBottom: "14px",
+                    paddingLeft: "30px",
+                    paddingRight: "12px",
+                    paddingTop: "6px",
+                    paddingBottom: "6px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "14px",
-                    fontSize: "15px",
+                    borderRadius: "10px",
+                    fontSize: "13px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -316,14 +323,14 @@ const handleRegister = async () => {
             </div>
 
             {/* Email */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ marginBottom: "4px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   color: "#334155",
-                  marginBottom: "4px",
+                  marginBottom: "2px",
                   paddingLeft: "2px",
                 }}
               >
@@ -333,9 +340,9 @@ const handleRegister = async () => {
                 <Mail
                   className="absolute"
                   style={{
-                    left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    left: "10px",
+                    width: "12px",
+                    height: "12px",
                     color: "#64748b",
                   }}
                 />
@@ -347,14 +354,14 @@ const handleRegister = async () => {
                   placeholder="name@example.com"
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "16px",
-                    paddingTop: "14px",
-                    paddingBottom: "14px",
+                    paddingLeft: "30px",
+                    paddingRight: "12px",
+                    paddingTop: "6px",
+                    paddingBottom: "6px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "14px",
-                    fontSize: "15px",
+                    borderRadius: "10px",
+                    fontSize: "13px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -367,14 +374,14 @@ const handleRegister = async () => {
             </div>
 
             {/* Password */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ marginBottom: "4px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   color: "#334155",
-                  marginBottom: "4px",
+                  marginBottom: "2px",
                   paddingLeft: "2px",
                 }}
               >
@@ -384,9 +391,9 @@ const handleRegister = async () => {
                 <Lock
                   className="absolute"
                   style={{
-                    left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    left: "10px",
+                    width: "12px",
+                    height: "12px",
                     color: "#64748b",
                   }}
                 />
@@ -398,14 +405,14 @@ const handleRegister = async () => {
                   placeholder="••••••••"
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "40px",
-                    paddingTop: "14px",
-                    paddingBottom: "14px",
+                    paddingLeft: "30px",
+                    paddingRight: "34px",
+                    paddingTop: "6px",
+                    paddingBottom: "6px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "14px",
-                    fontSize: "15px",
+                    borderRadius: "10px",
+                    fontSize: "13px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -419,7 +426,7 @@ const handleRegister = async () => {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute flex items-center"
                   style={{
-                    right: "12px",
+                    right: "10px",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -428,23 +435,23 @@ const handleRegister = async () => {
                   }}
                 >
                   {showPassword ? (
-                    <EyeOff style={{ width: "16px", height: "16px" }} />
+                    <EyeOff style={{ width: "12px", height: "12px" }} />
                   ) : (
-                    <Eye style={{ width: "16px", height: "16px" }} />
+                    <Eye style={{ width: "12px", height: "12px" }} />
                   )}
                 </button>
               </div>
             </div>
 
             {/* Confirm Password */}
-            <div style={{ marginBottom: "12px" }}>
+            <div style={{ marginBottom: "6px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: 700,
                   color: "#334155",
-                  marginBottom: "4px",
+                  marginBottom: "2px",
                   paddingLeft: "2px",
                 }}
               >
@@ -454,9 +461,9 @@ const handleRegister = async () => {
                 <Lock
                   className="absolute"
                   style={{
-                    left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    left: "10px",
+                    width: "12px",
+                    height: "12px",
                     color: "#64748b",
                   }}
                 />
@@ -468,14 +475,14 @@ const handleRegister = async () => {
                   onChange={handleChange}
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "40px",
-                    paddingTop: "14px",
-                    paddingBottom: "14px",
+                    paddingLeft: "30px",
+                    paddingRight: "34px",
+                    paddingTop: "6px",
+                    paddingBottom: "6px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "14px",
-                    fontSize: "15px",
+                    borderRadius: "10px",
+                    fontSize: "13px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -489,7 +496,7 @@ const handleRegister = async () => {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute flex items-center"
                   style={{
-                    right: "12px",
+                    right: "10px",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -498,9 +505,9 @@ const handleRegister = async () => {
                   }}
                 >
                   {showConfirmPassword ? (
-                    <EyeOff style={{ width: "16px", height: "16px" }} />
+                    <EyeOff style={{ width: "12px", height: "12px" }} />
                   ) : (
-                    <Eye style={{ width: "16px", height: "16px" }} />
+                    <Eye style={{ width: "12px", height: "12px" }} />
                   )}
                 </button>
               </div>
@@ -509,22 +516,22 @@ const handleRegister = async () => {
             {/* Terms */}
             <div
               className="flex items-start"
-              style={{ gap: "8px", marginBottom: "14px" }}
+              style={{ gap: "5px", marginBottom: "6px" }}
             >
               <input
                 type="checkbox"
                 id="terms"
                 style={{
                   marginTop: "2px",
-                  width: "20px",
-                  height: "20px",
+                  width: "16px",
+                  height: "16px",
                   accentColor: "#22c55e",
                   flexShrink: 0,
                 }}
               />
               <label
                 htmlFor="terms"
-                style={{ fontSize: "15px", color: "#475569", lineHeight: 1.4 }}
+                style={{ fontSize: "11px", color: "#475569", lineHeight: 1.4 }}
               >
                 I agree to the{" "}
                 <Link
@@ -560,12 +567,12 @@ const handleRegister = async () => {
                 background: "linear-gradient(135deg,#22c55e,#16a34a)",
                 color: "#fff",
                 fontWeight: 700,
-                borderRadius: "14px",
-                padding: "16px",
-                fontSize: "18px",
+                borderRadius: "10px",
+                padding: "8px",
+                fontSize: "13px",
                 border: "none",
                 cursor: "pointer",
-                marginBottom: "12px",
+                marginBottom: "4px",
                 letterSpacing: "0.4px",
                 fontFamily: "inherit",
                 boxShadow: "0 6px 12px rgba(22,163,74,0.25)",
@@ -586,10 +593,11 @@ const handleRegister = async () => {
             <p
               style={{
                 textAlign: "center",
-                fontSize: "15px",
+                fontSize: "11px",
                 color: "#475569",
                 fontWeight: 500,
                 margin: 0,
+                marginTop: "0px",
               }}
             >
               Already have an account?{" "}
@@ -608,7 +616,7 @@ const handleRegister = async () => {
         </div>
 
         {/* Hero Image */}
-        <div className="relative overflow-hidden" style={{ width: "54%" }}>
+        <div className="relative overflow-hidden" style={{ width: "56%" }}>
           <img
             src="/ui_login.png"
             alt="Healthy lifestyle"
@@ -632,15 +640,15 @@ const handleRegister = async () => {
               right: "28px",
               background: "rgba(44, 146, 42, 0.4)",
               borderRadius: "20px",
-              padding: "20px",
-              width: "260px",
+              padding: "14px",
+              width: "220px",
               color: "#f9fafb",
               boxShadow: "0 10px 30px rgba(15,23,42,0.3)",
             }}
           >
             <p
               style={{
-                fontSize: "12px",
+                fontSize: "10px",
                 fontStyle: "italic",
                 lineHeight: 1.6,
                 fontWeight: 500,
@@ -653,9 +661,9 @@ const handleRegister = async () => {
             <span
               style={{
                 display: "block",
-                fontSize: "11px",
+                fontSize: "10px",
                 fontWeight: 700,
-                marginTop: "10px",
+                marginTop: "8px",
                 textAlign: "right",
                 color: "#f9fafb",
               }}
@@ -673,20 +681,20 @@ const handleRegister = async () => {
               background: "rgba(15,23,42,0.3)",
               backdropFilter: "blur(12px)",
               borderRadius: "16px",
-              padding: "12px 18px",
+              padding: "8px 14px",
               color: "#e5e7eb",
               border: "1px solid rgba(148,163,184,0.5)",
             }}
           >
-            <p style={{ fontSize: "16px", fontWeight: 700, margin: 0 }}>
+            <p style={{ fontSize: "13px", fontWeight: 700, margin: 0 }}>
               🥗 Track your nutrition
             </p>
             <p
               style={{
-                fontSize: "16px",
+                fontSize: "13px",
                 margin: 0,
                 opacity: 0.9,
-                marginTop: "3px",
+                marginTop: "2px",
               }}
             >
               Stay balanced every day

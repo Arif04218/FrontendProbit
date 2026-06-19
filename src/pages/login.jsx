@@ -9,25 +9,25 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const googleLogin = useGoogleLogin({
-  onSuccess: async (tokenResponse) => {
-    console.log("Google Login Success");
-    console.log(tokenResponse);
+    onSuccess: async (tokenResponse) => {
+      console.log("Google Login Success");
+      console.log(tokenResponse);
 
-    localStorage.setItem(
-      "googleAccessToken",
-      tokenResponse.access_token
-    );
+      localStorage.setItem(
+        "googleAccessToken",
+        tokenResponse.access_token
+      );
 
-    alert("Login Google berhasil");
+      alert("Login Google berhasil");
 
-    navigate("/dashboard");
-  },
+      navigate("/dashboard");
+    },
 
-  onError: () => {
-    console.log("Google Login Failed");
-    alert("Login Google gagal");
-  },
-});
+    onError: () => {
+      console.log("Google Login Failed");
+      alert("Login Google gagal");
+    },
+  });
 
   const [form, setForm] = useState({
     email: "",
@@ -72,35 +72,36 @@ export default function Login() {
     >
       {/* WRAPPER UTAMA */}
       <div
-        className="flex overflow-hidden w-full"
+        className="flex w-full"
         style={{
           width: "100%",
-          height: "100vh",
-          borderRadius: "0px",
+          minHeight: "100vh",
           background: "#f5f5f5",
         }}
       >
         {/* Area Form & Logo */}
         <div
-          justify-content: flex-start
           style={{
-            width: "46%",
-            padding: "40px 60px",
+            width: "44%",
+            minWidth: "600px",
+            padding: "25px 45px",
             background: "#f8fafc",
             borderRight: "1px solid rgba(148, 163, 184, 0.1)",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           {/* Logo PROBIT */}
           <div
             className="flex items-center"
-            style={{ gap: "10px", paddingLeft: "4px" }}
+            style={{ gap: "8px" }}
           >
             <img
               src="/logo.png"
               alt="Probit Logo"
               style={{
-                width: "55px",
-                height: "55px",
+                width: "36px",
+                height: "36px",
                 objectFit: "contain",
                 borderRadius: "6px",
               }}
@@ -108,7 +109,7 @@ export default function Login() {
             <span
               style={{
                 fontWeight: 800,
-                fontSize: "50px",
+                fontSize: "32px",
                 color: "#0f172a",
                 letterSpacing: "-0.8px",
               }}
@@ -121,19 +122,21 @@ export default function Login() {
           <div
             className="w-full"
             style={{
-              maxWidth: "520px",
-              marginTop: "120px",
-              marginLeft: "150px",
+              width: "100%",
+              maxWidth: "430px",
+              marginTop: "35px",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
           >
             {/* Header */}
             <h2
               style={{
                 fontWeight: 700,
-                fontSize: "40px",
+                fontSize: "25px",
                 color: "#0f172a",
                 lineHeight: 1.2,
-                marginBottom: "10px",
+                marginBottom: "6px",
                 letterSpacing: "-0.5px",
                 textTransform: "capitalize",
               }}
@@ -142,10 +145,10 @@ export default function Login() {
             </h2>
             <p
               style={{
-                fontSize: "18px",
+                fontSize: "12px",
                 color: "#475569",
                 fontWeight: 500,
-                marginBottom: "16px",
+                marginBottom: "14px",
                 lineHeight: 1.4,
               }}
             >
@@ -153,25 +156,25 @@ export default function Login() {
             </p>
 
             {/* Social Buttons */}
-            <div className="flex" style={{ gap: "10px", marginBottom: "14px" }}>
+            <div className="flex" style={{ gap: "8px", marginBottom: "12px" }}>
               <button
                 onClick={() => googleLogin()}
                 className="flex-1 flex items-center justify-center"
                 style={{
                   background: "rgba(255,255,255,0.75)",
                   border: "1px solid rgba(148,163,184,0.4)",
-                  borderRadius: "16px",
-                  padding: "18px 12px",
-                  fontSize: "20px",
+                  borderRadius: "14px",
+                  padding: "10px 12px",
+                  fontSize: "14px",
                   fontWeight: 600,
                   color: "#374151",
-                  gap: "8px",
+                  gap: "6px",
                   cursor: "pointer",
                 }}
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="16"
+                  height="16"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -199,9 +202,9 @@ export default function Login() {
                 style={{
                   background: "rgba(255,255,255,0.75)",
                   border: "1px solid rgba(148,163,184,0.4)",
-                  borderRadius: "16px",
-                  padding: "18px 12px",
-                  fontSize: "20px",
+                  borderRadius: "14px",
+                  padding: "10px 12px",
+                  fontSize: "14px",
                   fontWeight: 600,
                   color: "#374151",
                   gap: "5px",
@@ -209,8 +212,8 @@ export default function Login() {
                 }}
               >
                 <svg
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -223,7 +226,7 @@ export default function Login() {
             {/* Divider */}
             <div
               className="flex items-center"
-              style={{ gap: "10px", marginBottom: "14px" }}
+              style={{ gap: "8px", marginBottom: "12px" }}
             >
               <div
                 style={{
@@ -234,7 +237,7 @@ export default function Login() {
               />
               <span
                 style={{
-                  fontSize: "18px",
+                  fontSize: "12px",
                   color: "#64748b",
                   whiteSpace: "nowrap",
                   padding: "0 2px",
@@ -253,11 +256,11 @@ export default function Login() {
             </div>
 
             {/* Email */}
-            <div style={{ marginBottom: "10px" }}>
+            <div style={{ marginBottom: "8px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "20px",
+                  fontSize: "13px",
                   fontWeight: 700,
                   color: "#334155",
                   marginBottom: "4px",
@@ -271,8 +274,8 @@ export default function Login() {
                   className="absolute"
                   style={{
                     left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    width: "14px",
+                    height: "14px",
                     color: "#64748b",
                   }}
                 />
@@ -284,14 +287,14 @@ export default function Login() {
                   placeholder="name@example.com"
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "16px",
-                    paddingTop: "18px",
-                    paddingBottom: "18px",
+                    paddingLeft: "34px",
+                    paddingRight: "14px",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "16px",
-                    fontSize: "20px",
+                    borderRadius: "14px",
+                    fontSize: "14px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -304,11 +307,11 @@ export default function Login() {
             </div>
 
             {/* Password */}
-            <div style={{ marginBottom: "12px" }}>
+            <div style={{ marginBottom: "10px" }}>
               <label
                 style={{
                   display: "block",
-                  fontSize: "20px",
+                  fontSize: "13px",
                   fontWeight: 700,
                   color: "#334155",
                   marginBottom: "4px",
@@ -322,8 +325,8 @@ export default function Login() {
                   className="absolute"
                   style={{
                     left: "12px",
-                    width: "16px",
-                    height: "16px",
+                    width: "14px",
+                    height: "14px",
                     color: "#64748b",
                   }}
                 />
@@ -335,14 +338,14 @@ export default function Login() {
                   placeholder="••••••••"
                   style={{
                     width: "100%",
-                    paddingLeft: "36px",
-                    paddingRight: "40px",
-                    paddingTop: "18px",
-                    paddingBottom: "18px",
+                    paddingLeft: "34px",
+                    paddingRight: "38px",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
                     background: "rgba(255,255,255,0.9)",
                     border: "1px solid #cbd5e1",
-                    borderRadius: "16px",
-                    fontSize: "20px",
+                    borderRadius: "14px",
+                    fontSize: "14px",
                     color: "#111827",
                     outline: "none",
                     fontFamily: "inherit",
@@ -365,9 +368,9 @@ export default function Login() {
                   }}
                 >
                   {showPassword ? (
-                    <EyeOff style={{ width: "16px", height: "16px" }} />
+                    <EyeOff style={{ width: "14px", height: "14px" }} />
                   ) : (
-                    <Eye style={{ width: "16px", height: "16px" }} />
+                    <Eye style={{ width: "14px", height: "14px" }} />
                   )}
                 </button>
               </div>
@@ -377,14 +380,14 @@ export default function Login() {
               style={{
                 display: "flex",
                 justifyContent: "flex-end",
-                marginBottom: "14px",
+                marginBottom: "12px",
               }}
             >
               <Link
                 to="/ForgotPassword"
                 style={{
                   color: "#2563eb",
-                  fontSize: "18px",
+                  fontSize: "12px",
                   fontWeight: "600",
                   textDecoration: "none",
                 }}
@@ -396,22 +399,22 @@ export default function Login() {
             {/* Terms */}
             <div
               className="flex items-start"
-              style={{ gap: "8px", marginBottom: "14px" }}
+              style={{ gap: "6px", marginBottom: "12px" }}
             >
               <input
                 type="checkbox"
                 id="terms"
                 style={{
                   marginTop: "2px",
-                  width: "22px",
-                  height: "22px",
+                  width: "18px",
+                  height: "18px",
                   accentColor: "#22c55e",
                   flexShrink: 0,
                 }}
               />
               <label
                 htmlFor="terms"
-                style={{ fontSize: "16px", color: "#475569", lineHeight: 1.4 }}
+                style={{ fontSize: "12px", color: "#475569", lineHeight: 1.4 }}
               >
                 I agree to the{" "}
                 <Link
@@ -448,11 +451,11 @@ export default function Login() {
                 color: "#fff",
                 fontWeight: 700,
                 borderRadius: "12px",
-                padding: "20px",
-                fontSize: "23px",
+                padding: "12px",
+                fontSize: "16px",
                 border: "none",
                 cursor: "pointer",
-                marginBottom: "12px",
+                marginBottom: "10px",
                 letterSpacing: "0.4px",
                 fontFamily: "inherit",
                 boxShadow: "0 6px 12px rgba(22,163,74,0.25)",
@@ -473,7 +476,7 @@ export default function Login() {
             <p
               style={{
                 textAlign: "center",
-                fontSize: "16px",
+                fontSize: "12px",
                 color: "#475569",
                 fontWeight: 500,
                 margin: 0,
@@ -495,12 +498,20 @@ export default function Login() {
         </div>
 
         {/* Hero Image */}
-        <div className="relative overflow-hidden" style={{ width: "54%" }}>
+        <div
+          className="relative overflow-hidden"
+          style={{
+            width: "56%",
+          }}
+        >
           <img
             src="/ui_login.png"
             alt="Healthy lifestyle"
             className="w-full h-full"
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
           />
           <div
             style={{
@@ -519,15 +530,15 @@ export default function Login() {
               right: "28px",
               background: "rgba(44, 146, 42, 0.4)",
               borderRadius: "20px",
-              padding: "20px",
-              width: "260px",
+              padding: "14px",
+              width: "220px",
               color: "#f9fafb",
               boxShadow: "0 10px 30px rgba(15,23,42,0.3)",
             }}
           >
             <p
               style={{
-                fontSize: "12px",
+                fontSize: "10px",
                 fontStyle: "italic",
                 lineHeight: 1.6,
                 fontWeight: 500,
@@ -540,9 +551,9 @@ export default function Login() {
             <span
               style={{
                 display: "block",
-                fontSize: "11px",
+                fontSize: "10px",
                 fontWeight: 700,
-                marginTop: "10px",
+                marginTop: "8px",
                 textAlign: "right",
                 color: "#f9fafb",
               }}
@@ -560,20 +571,20 @@ export default function Login() {
               background: "rgba(15,23,42,0.3)",
               backdropFilter: "blur(12px)",
               borderRadius: "16px",
-              padding: "12px 18px",
+              padding: "8px 14px",
               color: "#e5e7eb",
               border: "1px solid rgba(148,163,184,0.5)",
             }}
           >
-            <p style={{ fontSize: "16px", fontWeight: 700, margin: 0 }}>
+            <p style={{ fontSize: "13px", fontWeight: 700, margin: 0 }}>
               🥗 Track your nutrition
             </p>
             <p
               style={{
-                fontSize: "16px",
+                fontSize: "13px",
                 margin: 0,
                 opacity: 0.9,
-                marginTop: "3px",
+                marginTop: "2px",
               }}
             >
               Stay balanced every day
