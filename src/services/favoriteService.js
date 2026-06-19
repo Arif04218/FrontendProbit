@@ -14,6 +14,9 @@ export const deleteFavoriteRecipe = (favoriteId) =>
 export const getFavorites = () =>
   api.get("/user/favorites");
 
+export const addFavoriteBlog = (blogId) =>
+  api.post("/user/favorites/blogs", { blog_id: blogId });
+
 export const deleteFavorite = (favoriteId) =>
   api.delete(`/user/favorites/${favoriteId}`);
 
