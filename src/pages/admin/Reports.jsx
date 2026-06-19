@@ -35,18 +35,30 @@ export default function Reports() {
     fetchReports();
   }, []);
 
-  const totalAdminActivity = activityLogs.filter(
-    (log) => log.User?.role === "admin" || log.user?.role === "admin"
-  ).length;
+  const logs = await ActivityLog.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["id", "username", "email", "role"],
+      },
+    ],
+    order: [["id", "DESC"]],
+  });
 
-  const totalUserActivity = activityLogs.filter(
-    (log) => log.User?.role === "user" || log.user?.role === "user"
-  ).length;
-    const latest = logs.slice(0, 12);
+  const getLogUser = (log) => log.User || log.user || log.users || log.Users || {};
+
+  const userActivities = useMemo(
+    () => logs.filter((log) => log.User?.role === "user"), 
+    [logs]
+  );
+  const adminActivities = useMemo(
+    () => logs.filter((log) => log.User?.role === "admin"), 
+    [logs]
+  );
+  const latest = logs.slice(0, 12);
 
   const stats = [
-    { title: "Aktivitas Admin", val: totalAdminActivity, icon: Activity, color: "text-emerald-500" },
-    { title: "Aktivitas User", val: totalUserActivity, icon: Activity, color: "text-emerald-500" },
+    { title: "Aktivitas User", val: userActivities.length, icon: Activity, color: "text-emerald-500" },
     { title: "Total User", val: users.length, icon: Users, color: "text-blue-500" },
     { title: "Artikel", val: blogs.length, icon: Newspaper, color: "text-indigo-500" },
     { title: "Resep", val: recipes.length, icon: Utensils, color: "text-orange-500" },
@@ -112,8 +124,8 @@ export default function Reports() {
         <div className="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm h-fit">
           <h3 className="font-black text-slate-800 mb-5">Ringkasan Role</h3>
           <div className="space-y-4">
-            <Summary label="User Activity" value={totalUserActivity} />
-            <Summary label="Admin Activity" value={totalAdminActivity} />
+            <Summary label="User Activity" value={userActivities.length} />
+            <Summary label="Admin Activity" value={adminActivities.length} />
             <Summary label="Total Activity" value={logs.length} />
           </div>
         </div>
