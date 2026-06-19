@@ -35,15 +35,6 @@ export default function Reports() {
     fetchReports();
   }, []);
 
-  const logs = await ActivityLog.findAll({
-    include: [
-      {
-        model: User,
-        attributes: ["id", "username", "email", "role"],
-      },
-    ],
-    order: [["id", "DESC"]],
-  });
 
   const getLogUser = (log) => log.User || log.user || log.users || log.Users || {};
 
