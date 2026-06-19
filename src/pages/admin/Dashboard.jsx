@@ -15,6 +15,7 @@ import {
   X,
   CheckCircle,
 } from "lucide-react";
+import{formatdatetimeindonesia}from"../../utils/dateTime";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -146,10 +147,7 @@ export default function Dashboard() {
                   {log.activity || log.action_description}
                 </p>
                 <span className="text-[10px] text-slate-400">
-                  {new Date(log.created_at).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+                  {formatdatetimeindonesia(log.createdAt || log.created_at)}WIB
                 </span>
               </div>
             ))}
